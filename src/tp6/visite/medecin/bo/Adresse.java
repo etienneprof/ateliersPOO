@@ -1,4 +1,4 @@
-package tp.visite.medecin.bo;
+package tp6.visite.medecin.bo;
 
 public class Adresse {
 /*

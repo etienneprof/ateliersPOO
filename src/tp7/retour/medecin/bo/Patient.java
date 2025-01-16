@@ -1,4 +1,4 @@
-package tp.visite.medecin.bo;
+package tp7.retour.medecin.bo;
 
 import java.time.LocalDate;
 
@@ -10,9 +10,10 @@ public class Patient {
 	private long secu;
 	private LocalDate dateNaissance;
 	private String commentaires;
+	private Adresse adresse;
 	
 	public Patient(String nom, String prenom, String telephone, char sexe, long secu, LocalDate dateNaissance,
-			String commentaires) {
+			String commentaires, Adresse adresse) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.telephone = telephone;
@@ -20,11 +21,12 @@ public class Patient {
 		this.secu = secu;
 		this.dateNaissance = dateNaissance;
 		this.commentaires = commentaires;
+		this.adresse = adresse;
 	}
 	
 	
-	public Patient(String nom, String prenom, String telephone, char sexe, long secu, LocalDate dateNaissance) {
-		this(nom, prenom, telephone, sexe, secu, dateNaissance, "");
+	public Patient(String nom, String prenom, String telephone, char sexe, long secu, LocalDate dateNaissance, Adresse adresse) {
+		this(nom, prenom, telephone, sexe, secu, dateNaissance, "", adresse);
 	}
 	
 	public void afficher() {
@@ -86,6 +88,14 @@ public class Patient {
 	public void setCommentaires(String commentaires) {
 		this.commentaires = commentaires;
 	}
+	
+	public Adresse getAdresse() {
+		return adresse;
+	}
+	
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 
 	@Override
 	public String toString() {
@@ -95,6 +105,8 @@ public class Patient {
 				+ prenom
 				+ ", telephone="
 				+ telephone
+				+ ", adresse="
+				+ adresse
 				+ ", sexe="
 				+ sexe
 				+ ", secu="
@@ -107,7 +119,7 @@ public class Patient {
 			result += " - ";
 		} else {
 			result += commentaires;
-		}		
+		}
 		result +=  "]";
 		return result;
 	}

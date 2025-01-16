@@ -1,16 +1,27 @@
-package tp.visite.medecin.bo;
+package tp7.retour.medecin.bo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MedecinGeneraliste {
 	private String nom;
 	private String prenom;
 	private String telephone;
+	private Adresse adresse;
+	
+	private List<Creneau> creneaux = new ArrayList<Creneau>();
 	
 	private static int tarif;
 
-	public MedecinGeneraliste(String nom, String prenom, String telephone) {
+	public MedecinGeneraliste(String nom, String prenom, String telephone, Adresse adresse) {
 		setNom(nom);
 		setPrenom(prenom);
 		setTelephone(telephone);
+		setAdresse(adresse);
+	}
+	
+	public void ajouterCreneau(Creneau creneau) {
+		creneaux.add(creneau);
 	}
 	
 	public void afficher() {
@@ -40,6 +51,18 @@ public class MedecinGeneraliste {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+	
+	public Adresse getAdresse() {
+		return adresse;
+	}
+	
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+	
+	public List<Creneau> getCreneaux() {
+		return creneaux;
+	}
 
 	public static int getTarif() {
 		return tarif;
@@ -51,15 +74,25 @@ public class MedecinGeneraliste {
 
 	@Override
 	public String toString() {
-		return "MedecinGeneraliste [nom="
+		String result = "MedecinGeneraliste [nom="
 					+ nom
 					+ ", prenom="
 					+ prenom
 					+ ", telephone="
 					+ telephone
+					+ ", adresse="
+					+ adresse
 					+ ", tarif="
-					+ tarif
-				+ "]";
+					+ tarif;
+		
+		result += "\nCreneaux :\n";
+		for (Creneau current : creneaux) {
+			result += " - " + current.getHeureDebut() + " (" + current.getDuree() + " minutes)\n";
+		}
+		
+		
+		result += "]";
+		return result;
 	}
 	
 	

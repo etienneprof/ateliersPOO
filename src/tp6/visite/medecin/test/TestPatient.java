@@ -1,7 +1,8 @@
-package tp.visite.medecin.test;
+package tp6.visite.medecin.test;
 
 import java.time.LocalDate;
-import tp.visite.medecin.bo.Patient;
+
+import tp6.visite.medecin.bo.Patient;
 
 public class TestPatient {
 	public static void main(String[] args) {

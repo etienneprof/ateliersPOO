@@ -1,6 +1,6 @@
-package tp.visite.medecin.test;
+package tp6.visite.medecin.test;
 
-import tp.visite.medecin.bo.MedecinGeneraliste;
+import tp6.visite.medecin.bo.MedecinGeneraliste;
 
 public class TestMedecin {
 	public static void main(String[] args) {
