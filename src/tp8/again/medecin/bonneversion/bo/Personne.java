@@ -1,6 +1,6 @@
 package tp8.again.medecin.bonneversion.bo;
 
-public class Personne {
+public abstract class Personne {
 	protected String nom;
 	protected String prenom;
 	protected String telephone;
